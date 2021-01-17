@@ -60,7 +60,7 @@ while True:
             publicatie['Omschrijving'],
             publicatie['Aanbieder'],
             publicatie['Prijs'],
-            int(publicatie['Kamers']),
+            None if publicatie['Kamers'] == '' else int(publicatie['Kamers']),
             publicatie['AfbeeldingUrl'],
             datetime.fromisoformat(publicatie['PublicatieEinddatum']),
             datetime.fromisoformat(publicatie['PublicatieBegindatum']),
@@ -69,7 +69,8 @@ while True:
             publicatie['Longitude'],
             publicatie['PublicatieModel'],
             int(publicatie['IsWoonwensMatch']),
-            float(publicatie['Woonoppervlakte']),
+            # float(publicatie['Woonoppervlakte']),
+            None if publicatie['Woonoppervlakte'] == '' else float(publicatie['Woonoppervlakte']),
             publicatie['DetailSoortOmschrijving'],
             int(publicatie['IsSocialeHuur'])
         ]
